@@ -19,7 +19,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 # Define the model hyperparameters
 params = {
     "solver": "lbfgs",
-    "max_iter": 1000,
+    "max_iter": 100,
     "multi_class": "auto",
     "random_state": 8888,
 }
@@ -70,3 +70,5 @@ with mlflow.start_run():
         registered_model_name="tracking-quickstart",
     )
     print("# Log the model")
+
+    print(f"Model logged to: {model_info.model_uri}")
